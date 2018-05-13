@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+    <link rel="stylesheet" type="text/css" href="css/Custom.css" />
+    <script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap-table.js"></script>
+    <script type="text/javascript" src="js/heroes.js"></script>
+</head>
+<body>
+    <!--NAVIGATION-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="species.html">Species</a></li>
+                    <li><a href="heroes.html">Heroes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT-->
+    <div class="row contentdiv">
+        <div class="col-md-6">
+            <h3>Add new hero</h3>
+               <div class="form-group">
+                    <label for="hero-name" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" name="name" id="create-hero-name">
+                </div>
+                <div class="form-group">
+                    <label for="hero-description" class="form-control-label">Description:</label>
+                    <input type="text" class="form-control" name="desc" id="create-hero-description">
+                </div>
+              <button type="submit" class="btn btn-default" onclick="createhero()">Create</button>
+        </div>
+        <div class="col-md-6">
+            <h3>Handle existing heroes</h3>
+                <label for="heroes-list" class="form-control-label">hero:</label>
+                <select class="form-control" id="heroes-list"></select><br /><br />
+                <div class="form-group">
+                    <label for="edit-hero-name" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" name="name" id="edit-hero-name">
+                </div>
+                <div class="form-group">
+                    <label for="edit-hero-description" class="form-control-label">Description:</label>
+                    <input type="text" class="form-control" name="desc" id="edit-hero-description">
+                </div>
+              <button type="submit" class="btn btn-default" onclick="posthero()">Update</button>
+              <button type="submit" class="btn btn-default" onclick="torolhero()">Delete</button>
+        </div>
+         <div class="col-md-12">
+            <h3>Existing heroes</h3>
+            <table id="herotable" data-toggle="table"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-pagination="true"
+                   data-page-list="[5,10,25]"
+                   data-page-size="5">
+                <thead>
+                    <tr>
+                        <th data-sortable="true" data-field="id">Id</th>
+                        <th data-sortable="true" data-field="name">Name</th>
+                        <th data-field="description">Description</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

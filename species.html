@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Species</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css" />
+    <link rel="stylesheet" type="text/css" href="css/Custom.css" />
+    <script type="text/javascript" src="libs/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/bootstrap-table.js"></script>
+    <script type="text/javascript" src="js/species.js"></script>
+</head>
+<body>
+    <!--NAVIGATION-->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="species.html">Species</a></li>
+                    <li><a href="heroes.html">Heroes</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--CONTENT-->
+    <div class="col contentdiv">
+        <div class="col-md-6">
+            <h3>Add new specie</h3>
+               <div class="form-group">
+                    <label for="species-name" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" name="name" id="create-species-name">
+                </div>
+                <div class="form-group">
+                    <label for="species-description" class="form-control-label">Description:</label>
+                    <input type="text" class="form-control" name="desc" id="create-species-description">
+                </div>
+              <button type="submit" class="btn btn-default" onclick="createspecie()">Create</button>
+        </div>
+        <div class="col-md-6">
+            <h3>Handle existing species</h3>
+                <label for="species-list" class="form-control-label">specie:</label>
+                <select class="form-control" id="species-list"></select><br /><br />
+                <div class="form-group">
+                    <label for="edit-species-name" class="form-control-label">Name:</label>
+                    <input type="text" class="form-control" name="name" id="edit-species-name">
+                </div>
+                <div class="form-group">
+                    <label for="edit-species-description" class="form-control-label">Description:</label>
+                    <input type="text" class="form-control" name="desc" id="edit-species-description">
+                </div>
+              <button type="submit" class="btn btn-default" onclick="postspecie()">Update</button>
+              <button type="submit" class="btn btn-default" onclick="torolspecie()">Delete</button>
+        </div>
+         <div class="col-md-12">
+            <h3>Existing species</h3>
+            <table id="specietable" data-toggle="table"
+                   data-search="true"
+                   data-show-refresh="true"
+                   data-show-toggle="true"
+                   data-show-columns="true"
+                   data-pagination="true"
+                   data-page-list="[5,10,25]"
+                   data-page-size="5">
+                <thead>
+                    <tr>
+                        <th data-sortable="true" data-field="id">Id</th>
+                        <th data-sortable="true" data-field="name">Name</th>
+                        <th data-field="description">Description</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
